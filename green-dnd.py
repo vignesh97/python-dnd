@@ -1,6 +1,8 @@
 import names
 import time
 import os
+import json
+
 
 def get_player_name():
     # LOCAL VARIABLES
@@ -31,8 +33,32 @@ def start_quiz_challenge():
     startmillis = int(round(time.time() * 1000))
     print(startmillis)
     '''QUIZ CODE '''
-    return True
-
+    isQuizCompleted = False
+    answerlist = []
+    with open('questions.json') as json_file:
+        data = json.load(json_file)
+        #print(data)
+        for q in data:
+            #print('ID: {}', str(q['id']))
+            print('Question : {} '.format(str(q['question'])))
+            for ans in q['answerOptions']:
+                print('Option {} : {} '.format(str(ans['order']), str(ans['answervalue'])))
+            answer = input("Hey {}, Choose your answer for this question ? [1|2|3|4] > ".format(player_name))
+            if int(answer) == int(q['answer']):
+                answerlist.append(True)
+                print("Correct answer!!!! move on")
+                isQuizCompleted = True
+            else:
+                answerlist.append(False)
+                print("Wrong answer!!!! Try Next question")
+                if answerlist.count(False) > 1:
+                    print("You lost!! you made two wrong answer")
+                    isQuizCompleted = False
+                    break
+    endmillis = int(round(time.time() * 1000))
+    totaltimetaken=endmillis-startmillis
+    print("Total Time taken : {} seconds".format(str(totaltimetaken/1000)))
+    return isQuizCompleted
 
 
 
@@ -83,8 +109,8 @@ def start_adventure():
         print("You entered the castle like a brave warrior keep it up!")
         quizstatus=rooms()
         if quizstatus:
-            displayPrincessEscaping()
             print("You can take the princness and leave the castle!!!!!!!!!!!!!!!!!!!!!!!!!")
+            displayPrincessEscaping()
         else:
             displayWitchKilledArt()
     elif decision_picked == "no":
@@ -97,9 +123,40 @@ player_name = ""
 
 
 def displayWitchKilledArt():
-    "WTICHNESSSSSSSSSSS"
+    print("")
+    print("")
+    print("                            You are killed ")
+    'print("               (       "     )   \ ")'
+    print("                ( _  *            \ ")
+    print("                   * (     /       \  ___ ")
+    print("                      "     "        _/ / ")
+    print("                     (   *  )    ___/   | ")
+    'print("                       )   "     _ o)``-./__ ")'
+    print("                      *  _ )    (_, . $$$ ")
+    print("                      (  )   __ __ 7_ $$$$ ")
+    print("                       ( :  { _)  '---  $\ ")
+    print("                  ______'___//__\   ____, \ ")
+    print("                   )           ( \_/ _____\_ ")
+    print("                 .'             \   \------''. ")
+    print("                 |='           '=|  |         ) ")
+    print("                 |               |  |  .    _/ ")
+    print("                  \    (. ) ,   /  /__I_____\ ")
+    print("              snd  '._/_)_(\__.'   (__,(__,_] ")
+    print("                  @---()_.'---@ ")
+    print("")
 
-
+def displayPrincessEscaping():
+    print("")
+    print("                __      _,, ")
+    print("               /_ \    sSSSs ")
+    print("               \_\(    s\_SS ")
+    'print("             (\/`"`\___/`"`\/) ")'
+    print("              \/)-(`-'-')=(\/ ")
+    print("               /___\    |__\ /\ ")
+    print("               //||__   ||\\//` ")
+    print("               \\'--.)   \\`` ")
+    print("               (/        (/ ")
+    print("")
 
 def print_quiz_art():
     print("")
@@ -198,6 +255,7 @@ def main():
     print_castle()
     player_name = get_player_name()
     start_adventure()
+    #start_quiz_challenge()
     '''   if quizstatus:
         "You learned many questions about cybersecurity"
     else:

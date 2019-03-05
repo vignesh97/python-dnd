@@ -44,5 +44,49 @@
       }
     ],
      "answer" : 4
+  },{
+    "id" : 3,
+    "question" : "What is nnmap is used for ?",
+    "answerOptions" : [
+      {
+        "order" : 1,
+        "answervalue" : "discover hosts and services"
+      },
+      {
+        "order" : 2,
+        "answervalue" : "discover security patches and virus"
+      },
+      {
+        "order" : 3,
+        "answervalue" : "host web service"
+      },
+      {
+        "order" : 4,
+        "answervalue" : "cloud information"
+      }
+    ],
+    "answer" : 1
+  },{
+    "id" : 4,
+    "question" : "What is nnmap is used for ?",
+    "answerOptions" : [
+      {
+        "order" : 1,
+        "answervalue" : "discover hosts and services"
+      },
+      {
+        "order" : 2,
+        "answervalue" : "discover security patches and virus"
+      },
+      {
+        "order" : 3,
+        "answervalue" : "host web service"
+      },
+      {
+        "order" : 4,
+        "answervalue" : "cloud information"
+      }
+    ],
+    "answer" : 1
   }
 ]
