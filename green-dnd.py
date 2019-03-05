@@ -38,6 +38,7 @@ def start_quiz_challenge():
         #print(data)
         for q in data:
             #print('ID: {}', str(q['id']))
+            print("")
             print('Question : {} '.format(str(q['question'])))
             for ans in q['answerOptions']:
                 print('Option {} : {} '.format(str(ans['order']), str(ans['answervalue'])))
@@ -77,12 +78,13 @@ def playquiz(player_name):
 
 def rooms():
     'print("You see two rooms, one with scary witch saying "come in darling" and the other one with a picture of beautiful princess")'
-    print("Which one do you choose, witch or princess")
-
+    print("Which one do you choose witch or princess, type witch or princess")
+    print_witch()
+    print_princess()
     next_move = input("> ")
     if "witch" in next_move:
         print("Hahahahahahahahha............")
-        print("You are into Princess room")
+        print("You are into witch room")
         quizstatus=False
     elif next_move.lower() == "princess":
         print("Hahahahahahahahha............")
