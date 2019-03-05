@@ -83,6 +83,7 @@ def start_adventure():
         print("You entered the castle like a brave warrior keep it up!")
         quizstatus=rooms()
         if quizstatus:
+            displayPrincessEscaping()
             print("You can take the princness and leave the castle!!!!!!!!!!!!!!!!!!!!!!!!!")
         else:
             displayWitchKilledArt()
