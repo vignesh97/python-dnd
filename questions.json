@@ -25,7 +25,7 @@
   {
     "id" : 2,
     "question" : "What is uname command is used for ?",
-    "answer" : [
+    "answerOptions" : [
       {
         "order" : 1,
         "answervalue" : "get current user name"

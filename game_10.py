@@ -84,7 +84,7 @@ def blue_door_room():
             # Get number of items in treasure chest with len))
             num_items_in_chest = len(treasure_chest)
 
-            print(f"Take all {num_items_in_chest} treasure, press '1'")
+            print("Take all {num_items_in_chest} treasure, press '1'")
             print("Leave it, press '2'")
 
             treasure_choice = input("> ")
@@ -95,7 +95,7 @@ def blue_door_room():
                 
                 temp_treasure_list = treasure_chest[:]
                 treasure_contents = ", ".join(treasure_chest)
-                print(f"\tYou also receive {treasure_contents}.")
+                print("\tYou also receive {treasure_contents}.")
 
                 # Removing all the rest of the items in the treasure chest
                 for treasure in temp_treasure_list:
@@ -104,7 +104,7 @@ def blue_door_room():
 
                 # Add the old sword in place of the new sword
                 treasure_chest.append("crappy sword") 
-                print(f"\tYou close the lid of the chest containing {treasure_chest} for the next adventurer. /grins")
+                print("\tYou close the lid of the chest containing {treasure_chest} for the next adventurer. /grins")
                 print("Now onward to get past this sleeping guard and the door to freedom.")
             elif treasure_choice == "2":
                 print("It will still be here (I hope), right after I get past this guard")
@@ -153,10 +153,10 @@ def get_player_name():
 
     if answer.lower() in ["y", "yes"]:
         name = alt_name
-        print(f"You are fun, {name.upper()}! Let's begin our adventure!")
+        print("You are fun, {name.upper()}! Let's begin our adventure!")
 
     elif answer.lower() in ["n", "no"]:
-        print(f"Ok, picky. {name.upper()} it is. Let's get started on our adventure.")
+        print("Ok, picky. {name.upper()} it is. Let's get started on our adventure.")
     else:
         print("Trying to be funny? Well, you will now be called {alt_name.upper()} anyway.")
         name = alt_name
@@ -217,7 +217,7 @@ def main():
     start_adventure()
     
     print("\nThe end\n")
-    print(f"Thanks for playing, {player_name.upper()}")
+    print("Thanks for playing, {player_name.upper()}")
 
 
 if __name__ == '__main__':
