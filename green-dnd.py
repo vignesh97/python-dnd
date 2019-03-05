@@ -31,7 +31,7 @@ def get_player_name():
 
 def start_quiz_challenge():
     startmillis = int(round(time.time() * 1000))
-    print(startmillis)
+    #print(startmillis)
     '''QUIZ CODE '''
     isQuizCompleted = False
     answerlist = []
