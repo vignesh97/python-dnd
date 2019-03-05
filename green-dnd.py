@@ -25,7 +25,35 @@ def get_player_name():
     # This is why indentation is important, variables declared in this block only exists in that block
     return name
 
+def print_quiz_art():
+    print("")
+    print("▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄")
+    print("▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌")
+    print("▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌ ▀▀▀▀█░█▀▀▀▀  ▀▀▀▀▀▀▀▀▀█░▌")
+    print("▐░▌       ▐░▌▐░▌       ▐░▌     ▐░▌               ▐░▌")
+    print("▐░▌       ▐░▌▐░▌       ▐░▌     ▐░▌      ▄▄▄▄▄▄▄▄▄█░▌")
+    print("▐░▌       ▐░▌▐░▌       ▐░▌     ▐░▌     ▐░░░░░░░░░░░▌")
+    print("▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌     ▐░▌     ▐░█▀▀▀▀▀▀▀▀▀")
+    print("▐░░░░░░░░░░░▌▐░▌       ▐░▌     ▐░▌     ▐░▌")
+    print(" ▀▀▀▀▀▀█░█▀▀ ▐░█▄▄▄▄▄▄▄█░▌ ▄▄▄▄█░█▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄")
+    print("        ▐░▌  ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌")
+    print("         ▀    ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀")
+    print("")
+    print("")
 
+def playquiz(player_name):
+    answer = input("Hey {}, Do you want to play the quiz challenge ? [Y|N] > ".format(player_name))
+    if answer.lower() in ["y", "yes"]:
+        quizstatus = True
+        print_quiz_art()
+        print("Type a character, when you are ready")
+    elif answer.lower() in ["n", "no"]:
+        print("Okay. You missed the fun part. Let's get started on our adventure.".format(player_name.upper()))
+        quizstatus = False
+    else:
+        print("Trying to be funny? Well, you will now be called {} anyway.".format(player_name.upper()))
+        quizstatus = False
+    return quizstatus
 
 def main():
     '''
@@ -33,6 +61,11 @@ def main():
     '''
     print("\n Welcome to Green CASTLE")
     player_name = get_player_name()
+    quizstatus=playquiz(player_name)
+    if quizstatus:
+        "You learned many questions about cybersecurity"
+    else:
+        "You havent played it, thats okay"
 
     ####################################################################
     # ACTIVITIES
