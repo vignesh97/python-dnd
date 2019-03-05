@@ -46,47 +46,70 @@
      "answer" : 4
   },{
     "id" : 3,
-    "question" : "What is nnmap is used for ?",
+    "question" : "What is traceroute is used for ?",
     "answerOptions" : [
       {
         "order" : 1,
-        "answervalue" : "discover hosts and services"
+        "answervalue" : "find route between two vms"
       },
       {
         "order" : 2,
-        "answervalue" : "discover security patches and virus"
+        "answervalue" : "find trace error in router"
       },
       {
         "order" : 3,
-        "answervalue" : "host web service"
+        "answervalue" : "print route packets trace to network host"
       },
       {
         "order" : 4,
-        "answervalue" : "cloud information"
+        "answervalue" : "trace router location"
       }
     ],
-    "answer" : 1
+    "answer" : 3
   },{
     "id" : 4,
-    "question" : "What is nnmap is used for ?",
+    "question" : "What is df is used for in linux?",
     "answerOptions" : [
       {
         "order" : 1,
-        "answervalue" : "discover hosts and services"
+        "answervalue" : "display disk space usage in file system"
       },
       {
         "order" : 2,
-        "answervalue" : "discover security patches and virus"
+        "answervalue" : "display files and folders"
       },
       {
         "order" : 3,
-        "answervalue" : "host web service"
+        "answervalue" : "display file information"
       },
       {
         "order" : 4,
-        "answervalue" : "cloud information"
+        "answervalue" : "diagnosis functions in python"
       }
     ],
     "answer" : 1
+  },
+  ,{
+    "id" : 5,
+    "question" : "What is telnet command usage  in linux ?",
+    "answerOptions" : [
+      {
+        "order" : 1,
+        "answervalue" : "Telephone network of an organisation"
+      },
+      {
+        "order" : 2,
+        "answervalue" : "you can ping the machine in the network"
+      },
+      {
+        "order" : 3,
+        "answervalue" : "it allows you to ssh without password"
+      },
+      {
+        "order" : 4,
+        "answervalue" : "network protocol used to check whether an particular port is opened for communication or not "
+      }
+    ],
+    "answer" : 4
   }
 ]
