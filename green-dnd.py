@@ -1,5 +1,3 @@
-import names
-import time
 import os
 import json
 
@@ -10,7 +8,7 @@ def get_player_name():
 
 
     # This is just an alternative name that the game wants to call the player
-    alt_name = names.get_full_name()
+    alt_name = "Cyber Hacker"
     answer = input("We have a name for you. Your name is {}, Do you want to play this name ? [Y|N] > ".format(alt_name.upper()))
     name = "vignesh"
     if answer.lower() in ["y", "yes"]:
@@ -30,7 +28,7 @@ def get_player_name():
     return name
 
 def start_quiz_challenge():
-    startmillis = int(round(time.time() * 1000))
+#    startmillis = int(round(time.time() * 1000))
     #print(startmillis)
     '''QUIZ CODE '''
     isQuizCompleted = False
@@ -55,15 +53,15 @@ def start_quiz_challenge():
                     print("You lost!! you made two wrong answer")
                     isQuizCompleted = False
                     break
-    endmillis = int(round(time.time() * 1000))
-    totaltimetaken=endmillis-startmillis
-    print("Total Time taken : {} seconds".format(str(totaltimetaken/1000)))
+#    endmillis = int(round(time.time() * 1000))
+#    totaltimetaken=endmillis-startmillis
+#    print("Total Time taken : {} seconds".format(str(totaltimetaken/1000)))
     return isQuizCompleted
 
 
 
 def playquiz(player_name):
-    answer = input("Hey {}, Do you want to play the quiz challenge ? [Y|N] > ".format(player_name))
+    answer = input("Hey {}, If you make two wrong answers, then the witch will kill you. Do you want to play the quiz challenge ? [Y|N] > ".format(player_name))
     if answer.lower() in ["y", "yes"]:
         quizstatus = True
         print_quiz_art()
