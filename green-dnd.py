@@ -1,4 +1,6 @@
 import names
+import time
+import os
 
 def get_player_name():
     # LOCAL VARIABLES
@@ -25,6 +27,79 @@ def get_player_name():
     # This is why indentation is important, variables declared in this block only exists in that block
     return name
 
+def start_quiz_challenge():
+    startmillis = int(round(time.time() * 1000))
+    print(startmillis)
+    '''QUIZ CODE '''
+    return True
+
+
+
+
+def playquiz(player_name):
+    answer = input("Hey {}, Do you want to play the quiz challenge ? [Y|N] > ".format(player_name))
+    if answer.lower() in ["y", "yes"]:
+        quizstatus = True
+        print_quiz_art()
+        quizstatus=start_quiz_challenge()
+    elif answer.lower() in ["n", "no"]:
+        print("Okay. You missed the fun part. Let's get started on our adventure.".format(player_name.upper()))
+
+        quizstatus = False
+    else:
+        print("Trying to be funny? Well, you will now be called {} anyway.".format(player_name.upper()))
+        quizstatus = False
+    return quizstatus
+
+def rooms():
+    'print("You see two rooms, one with scary witch saying "come in darling" and the other one with a picture of beautiful princess")'
+    print("Which one do you choose, witch or princess")
+
+    next_move = input("> ")
+    if "witch" in next_move:
+        print("Hahahahahahahahha............")
+        print("You are into Princess room")
+        quizstatus=False
+    elif next_move.lower() == "princess":
+        print("Hahahahahahahahha............")
+        print("You are into witch room")
+        print_witch()
+        print("Play quiz challenge to escape from me !!!!!")
+        print_quiz_art()
+        quizstatus = playquiz(player_name)
+    else:
+        print("Sorry, Thats is not a right option")
+        quizstatus = False
+    return quizstatus
+
+def start_adventure():
+    print_castle()
+    print("It's going to be very scary and dark with just low lights entering throgh the broken glass's in the window.")
+
+    decision_picked = input("Do you want to enter? yes or no? > ")
+
+    # Pick a path and we go to a place and something else happens
+    if decision_picked == "yes":
+        print("You entered the castle like a brave warrior keep it up!")
+        quizstatus=rooms()
+        if quizstatus:
+            print("You can take the princness and leave the castle!!!!!!!!!!!!!!!!!!!!!!!!!")
+        else:
+            displayWitchKilledArt()
+    elif decision_picked == "no":
+        print("You are a scary pig! Goodbye")
+    else:
+        print("Sorry, it's either 'yes' or 'no' as the answer. You're the weakest link, try again!")
+        start_adventure()
+
+player_name = ""
+
+
+def displayWitchKilledArt():
+    "WTICHNESSSSSSSSSSS"
+
+
+
 def print_quiz_art():
     print("")
     print("▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄")
@@ -41,32 +116,92 @@ def print_quiz_art():
     print("")
     print("")
 
-def playquiz(player_name):
-    answer = input("Hey {}, Do you want to play the quiz challenge ? [Y|N] > ".format(player_name))
-    if answer.lower() in ["y", "yes"]:
-        quizstatus = True
-        print_quiz_art()
-        print("Type a character, when you are ready")
-    elif answer.lower() in ["n", "no"]:
-        print("Okay. You missed the fun part. Let's get started on our adventure.".format(player_name.upper()))
-        quizstatus = False
-    else:
-        print("Trying to be funny? Well, you will now be called {} anyway.".format(player_name.upper()))
-        quizstatus = False
-    return quizstatus
+def print_castle():
+    print("")
+    print("   /\                                                        /\ ")
+    print("  |  |                                                      |  | ")
+    print(" /----\                  Lord Dark's Keep                  /----\ ")
+    print("[______]             Where Brave Knights Tremble          [______] ")
+    print(" |    |         _____                        _____         |    | ")
+    print(" |[]  |        [     ]                      [     ]        |  []| ")
+    print(" |    |       [_______][ ][ ][ ][][ ][ ][ ][_______]       |    | ")
+    print(" |    [ ][ ][ ]|     |  ,----------------,  |     |[ ][ ][ ]    | ")
+    print(" |             |     |/'    ____..____    '\|     |             | ")
+    print("  \  []        |     |    /'    ||    '\    |     |        []  / ")
+    print("   |      []   |     |   |o     ||     o|   |     |  []       | ")
+    print("   |           |  _  |   |     _||_     |   |  _  |           | ")
+    print("  |   []      | (_) |   |    (_||_)    |   | (_) |       []  | ")
+    print("   |           |     |   |     (||)     |   |     |           | ")
+    print("   |           |     |   |      ||      |   |     |           | ")
+    print(" /''           |     |   |o     ||     o|   |     |           ''\ ")
+    print("[_____________[_______]--'------''------'--[_______]_____________] ")
+    print("")
+
+def print_witch():
+    print("")
+    print("                                                     __,,,")
+    print("                                                _.--'    / ")
+    print("                                             .-'        / ")
+    print("                                           .'          | ")
+    print("                                         .'           / ")
+    print("                                        /_____________| ")
+    print("                                      /`~~~~~~~~~~~~~~/ ")
+    print("                                    /`               / ")
+    print("                     ____,....----'/_________________|---....,___ ")
+    print("               ,--""`             `~~~~~~~~~~~~~~~~~~`           `""--, ")
+    print("               `'----------------.----,------------------------,-------'` ")
+    print("                              _,'.--. \                         \ ")
+    print("                            .'  (o   ) \                        | ")
+    print("                           c   , '--'  |                        / ")
+    print("                          /    )'-.    \                       / ")
+    print("                         |  .-;        \                       | ")
+    print(" come on darling         \_/  |___,'    |                    .-' ")
+    print("                        .---.___|_      |                   / ")
+    print("                       (          `     |               .--' ")
+    print("                        '.         __,-'\             .' ")
+    print("                          `'-----'`      \        __.' ")
+    print("                                     jgs  `-..--'` ")
+    print("")
+
+def print_princess():
+    print("")
+    print("         ..... ")
+    print("         WWWWW ")
+    print("        ((. .)) ")
+    print("       ))) - ((( ")
+    print("     ((((`...'))) ")
+    print("      ))))\  /((( ")
+    print("      /    \/    \ ")
+    print("     / /\      /\ \ ")
+    print("    / /  \    /  \ \ ")
+    print("   @@@@  / \/ \  @@@@ ")
+    print("   (v   /      \   v) ")
+    print("       @@@@@@@@@@ ")
+    print("      /          \ ")
+    print("     /            \ ")
+    print("    @@@@@@@@@@@@@@@@ ")
+    print("   /                \ ")
+    print("  /                  \ ")
+    print(" @@@@@@@@@@@@@@@@@@@@@@ ")
+    print(" /                    \ ")
+    print("@@@@@@@@@@@@@@@@@@@@@@@@   ")
+    print("         v  v ")
+    print("         v  v ")
+    print("")
 
 def main():
     '''
     Gets the players name by calling get_player_name() before starting the adventure.
     '''
-    print("\n Welcome to Green CASTLE")
+    print("\n Welcome to GreenWitch CASTLE")
+    print_castle()
     player_name = get_player_name()
-    quizstatus=playquiz(player_name)
-    if quizstatus:
+    start_adventure()
+    '''   if quizstatus:
         "You learned many questions about cybersecurity"
     else:
         "You havent played it, thats okay"
-
+    '''
     ####################################################################
     # ACTIVITIES
     #
@@ -91,7 +226,7 @@ def main():
     #####################################################################
     print("\nThe end\n")
     print("Thanks for playing, {}".format(player_name.upper()))
-
+    player_name=""
 
 if __name__ == '__main__':
     main()
