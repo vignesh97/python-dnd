@@ -1,8 +1,11 @@
 # python-dnd
 python-dnd
 
-
-ASCII Generator 
-http://patorjk.com/software/taag/#p=display&f=Electronic&t=QUIZ
+```angularjs
+python3 -m venv env
+source env/bin/activate
+pip install json
+python3 green-dnd.py
+```
 
 
